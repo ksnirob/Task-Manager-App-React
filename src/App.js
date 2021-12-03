@@ -84,7 +84,7 @@ function App() {
   return (
     <Router>
       <div className="container">
-        <Header title="Task Manager" onAdd={() => setShowAddTask(!showAddTask)} showAdd={showAddTask} />
+        <Header title="Task Manager2" onAdd={() => setShowAddTask(!showAddTask)} showAdd={showAddTask} />
         
         <Route path='/' exact render={(props) => (
           <>
