@@ -21,7 +21,7 @@ function App() {
 
   // fetch tasks
   const fetchTasks = async () => {
-    const res = await fetch('http://localhost:5000/tasks')
+    const res = await fetch('http://taskmanager7.netlify.app:5000/tasks')
     const data = await res.json()
 
     return data
@@ -29,7 +29,7 @@ function App() {
 
     // fetch tasks
     const fetchTask = async (id) => {
-      const res = await fetch(`http://localhost:5000/tasks/${id}`)
+      const res = await fetch(`http://taskmanager7.netlify.app:5000/tasks/${id}`)
       const data = await res.json()
   
       return data
@@ -37,7 +37,7 @@ function App() {
 
   // add task
   const addTask = async (task) => {
-    const res = await fetch('http://localhost:5000/tasks', {
+    const res = await fetch('http://taskmanager7.netlify.app:5000/tasks', {
       method: 'POST',
       headers: {
         'Content-type': 'application/json'
@@ -56,7 +56,7 @@ function App() {
 
   // delete task
   const deleteTask = async (id) => {
-    await fetch(`http://localhost:5000/tasks/${id}`, {
+    await fetch(`http://taskmanager7.netlify.app:5000/tasks/${id}`, {
       method: 'DELETE'
     })
     // console.log('Delete', id)
@@ -68,7 +68,7 @@ function App() {
     const taskToToggle = await fetchTask(id)
     const upTask = {...taskToToggle, reminder: !taskToToggle.reminder}
 
-    const res = await fetch(`http://localhost:5000/tasks/${id}`,{
+    const res = await fetch(`http://taskmanager7.netlify.app:5000/tasks/${id}`,{
       method: 'PUT',
       headers: {'Content-type': 'application/json'},
       body: JSON.stringify(upTask)
